@@ -120,8 +120,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         //复用之前的update方法
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDTO, employee);
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser(BaseContext.getCurrentId());
         employeeMapper.update(employee);
     }
 
